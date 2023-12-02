@@ -10,4 +10,9 @@ class Dice {
   int roll() {
     return Random().nextInt(max - min + 1) + min;
   }
+
+  @override
+  String toString() {
+    return 'Dice{name: $name, min: $min, max: $max}';
+  }
 }

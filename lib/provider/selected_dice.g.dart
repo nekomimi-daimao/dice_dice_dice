@@ -6,19 +6,20 @@ part of 'selected_dice.dart';
 // RiverpodGenerator
 // **************************************************************************
 
-String _$diceSelectedHash() => r'118eef8752a0d5aabc268e84eb00eb8373b783a1';
+String _$selectedDiceHash() => r'bc4b176fc53951a716cbab54e5144249c93d77d1';
 
-/// See also [diceSelected].
-@ProviderFor(diceSelected)
-final diceSelectedProvider = AutoDisposeProvider<Dice>.internal(
-  diceSelected,
-  name: r'diceSelectedProvider',
+/// See also [SelectedDice].
+@ProviderFor(SelectedDice)
+final selectedDiceProvider =
+    AutoDisposeNotifierProvider<SelectedDice, Dice>.internal(
+  SelectedDice.new,
+  name: r'selectedDiceProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$diceSelectedHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$selectedDiceHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef DiceSelectedRef = AutoDisposeProviderRef<Dice>;
+typedef _$SelectedDice = AutoDisposeNotifier<Dice>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

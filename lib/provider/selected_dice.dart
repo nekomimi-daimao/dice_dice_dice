@@ -5,6 +5,13 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'selected_dice.g.dart';
 
 @riverpod
-Dice diceSelected(DiceSelectedRef ref) {
-  return DiceDefaults.defaultDice.elementAt(1);
+class SelectedDice extends _$SelectedDice {
+  @override
+  Dice build() {
+    return DiceDefaults.defaultDice.elementAt(1);
+  }
+
+  void selectDice(Dice newDice) {
+    state = newDice;
+  }
 }
