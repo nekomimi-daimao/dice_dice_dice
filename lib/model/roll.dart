@@ -15,4 +15,9 @@ class Roll {
   static Roll empty = Roll(DiceDefaults.defaultDice.elementAt(1), 1, [1]);
 
   int sum() => result.reduce((a, b) => a + b);
+
+  @override
+  String toString() {
+    return 'Roll{dice: $dice, count: $count, result: $result}';
+  }
 }
