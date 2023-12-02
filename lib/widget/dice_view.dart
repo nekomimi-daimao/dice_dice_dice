@@ -1,3 +1,4 @@
+import 'package:dice_dice_dice/widget/const_widgets.dart';
 import 'package:flutter/material.dart';
 
 import '../model/dice.dart';
@@ -10,8 +11,8 @@ class DiceView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: 80,
-        height: 80,
+        width: ConstWidgets.diceViewWidth,
+        height: ConstWidgets.diceViewHeight,
         padding: const EdgeInsets.all(5.0),
         decoration: BoxDecoration(
           border: Border.all(color: Colors.green),
