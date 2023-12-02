@@ -10,20 +10,27 @@ class DiceSelector extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final selected = ref.watch(diceSelectedProvider);
+    final selected = ref.watch(selectedDiceProvider);
 
-    return DropdownMenu<Dice>(
-        initialSelection: selected,
-        requestFocusOnTap: false,
-        enableSearch: false,
-        enableFilter: false,
-        label: const Text('Dice'),
-        onSelected: (Dice? dice) {
-          print(dice?.name);
-        },
-        dropdownMenuEntries: DiceDefaults.defaultDice
-            .map((e) => DropdownMenuEntry<Dice>(
-                value: e, label: e.name, labelWidget: DiceView(dice: e)))
-            .toList());
+    return DropdownButton<Dice>(
+      value: selected,
+      itemHeight: 90,
+      iconSize: 0,
+      focusColor: Colors.transparent,
+      underline: const SizedBox(
+        width: 0,
+        height: 0,
+      ),
+      onChanged: (Dice? value) {
+        if (value == null) {
+          return;
+        }
+        ref.read(selectedDiceProvider.notifier).selectDice(value);
+      },
+      items: DiceDefaults.defaultDice
+          .map(
+              (e) => DropdownMenuItem<Dice>(value: e, child: DiceView(dice: e)))
+          .toList(),
+    );
   }
 }
