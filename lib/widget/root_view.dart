@@ -1,5 +1,6 @@
 import 'package:dice_dice_dice/provider/roll_dice.dart';
 import 'package:dice_dice_dice/widget/roll_result.dart';
+import 'package:dice_dice_dice/widget/settings_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -28,6 +29,7 @@ class RootView extends HookConsumerWidget {
           ],
         ),
       ),
+      endDrawer: const SettingsDrawer(),
     );
   }
 }
