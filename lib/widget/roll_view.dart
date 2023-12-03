@@ -2,8 +2,8 @@ import 'package:dice_dice_dice/widget/dice_view.dart';
 import 'package:flutter/material.dart';
 import 'package:dice_dice_dice/model/roll.dart';
 
-class RollResult extends StatelessWidget {
-  const RollResult({super.key, required this.roll});
+class RollView extends StatelessWidget {
+  const RollView({super.key, required this.roll});
 
   final Roll roll;
 

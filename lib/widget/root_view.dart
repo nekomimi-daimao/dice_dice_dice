@@ -1,5 +1,5 @@
 import 'package:dice_dice_dice/provider/roll_dice.dart';
-import 'package:dice_dice_dice/widget/roll_result.dart';
+import 'package:dice_dice_dice/widget/roll_view.dart';
 import 'package:dice_dice_dice/widget/settings_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -23,7 +23,7 @@ class RootView extends HookConsumerWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RollResult(roll: roll),
+            RollView(roll: roll),
             const DiceSelector(),
             const GridCount(),
           ],
