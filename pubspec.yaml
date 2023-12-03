@@ -12,6 +12,7 @@ dependencies:
   flutter_hooks: ^0.20.3
   flutter_riverpod: ^2.4.9
   hooks_riverpod: ^2.4.9
+  package_info_plus: ^5.0.1
   riverpod_annotation: ^2.3.3
 
 dev_dependencies:
