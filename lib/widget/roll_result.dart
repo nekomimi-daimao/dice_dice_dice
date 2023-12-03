@@ -1,3 +1,4 @@
+import 'package:dice_dice_dice/provider/current_app_settings.dart';
 import 'package:dice_dice_dice/provider/roll_dice.dart';
 import 'package:dice_dice_dice/widget/roll_view.dart';
 import 'package:flutter/material.dart';
@@ -48,6 +49,9 @@ class RollResultState extends ConsumerState<RollResult>
     final roll = ref.watch(rollDiceProvider);
 
     ref.listen(rollDiceProvider, (previous, next) {
+      if (!ref.read(currentAppSettingsProvider).playAnimation) {
+        return;
+      }
       controller.reset();
       controller.forward();
     });
