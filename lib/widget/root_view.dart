@@ -3,7 +3,7 @@ import 'package:dice_dice_dice/widget/roll_result.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'dice_selecter.dart';
+import 'dice_selector.dart';
 import 'grid_count.dart';
 
 class RootView extends HookConsumerWidget {
