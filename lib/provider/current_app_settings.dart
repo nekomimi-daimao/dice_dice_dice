@@ -4,7 +4,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'current_app_settings.g.dart';
 
-@riverpod
+@Riverpod(keepAlive: true)
 class CurrentAppSettings extends _$CurrentAppSettings {
   @override
   AppSettings build() {
