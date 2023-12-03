@@ -1,9 +1,9 @@
 import 'dart:math';
 
 class Dice {
-  String name;
-  int min;
-  int max;
+  final String name;
+  final int min;
+  final int max;
 
   Dice(this.name, this.min, this.max);
 
