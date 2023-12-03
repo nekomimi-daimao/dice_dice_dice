@@ -1,15 +1,14 @@
-import 'package:dice_dice_dice/provider/roll_dice.dart';
 import 'package:dice_dice_dice/widget/dice_view.dart';
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:dice_dice_dice/model/roll.dart';
 
-class RollResult extends ConsumerWidget {
-  const RollResult({super.key});
+class RollResult extends StatelessWidget {
+  const RollResult({super.key, required this.roll});
+
+  final Roll roll;
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final roll = ref.watch(rollDiceProvider);
-
+  Widget build(BuildContext context) {
     List<Widget> results = [];
     results.add(Text("${roll.sum()} = "));
     results.addAll(roll.result.map((e) => Text(e.toString())));
@@ -17,6 +16,11 @@ class RollResult extends ConsumerWidget {
     return Container(
         width: 200,
         height: 200,
+        padding: const EdgeInsets.all(5.0),
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.green),
+          borderRadius: BorderRadius.circular(10),
+        ),
         child: Column(
           children: [
             Row(

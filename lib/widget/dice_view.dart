@@ -1,7 +1,6 @@
 import 'package:dice_dice_dice/widget/const_widgets.dart';
 import 'package:flutter/material.dart';
-
-import '../model/dice.dart';
+import 'package:dice_dice_dice/model/dice.dart';
 
 class DiceView extends StatelessWidget {
   const DiceView({super.key, required this.dice});
