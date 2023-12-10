@@ -21,7 +21,6 @@ class DiceView extends StatelessWidget {
               dice.name,
               style: const TextStyle(
                 fontSize: 20,
-                fontWeight: FontWeight.bold,
               ),
             ),
             const SizedBox(
@@ -35,7 +34,6 @@ class DiceView extends StatelessWidget {
                   dice.min.toString(),
                   style: const TextStyle(
                     fontSize: 16,
-                    fontWeight: FontWeight.bold,
                   ),
                 ),
                 const Icon(Icons.switch_left),
@@ -43,7 +41,6 @@ class DiceView extends StatelessWidget {
                   dice.max.toString(),
                   style: const TextStyle(
                     fontSize: 16,
-                    fontWeight: FontWeight.bold,
                   ),
                 ),
               ],

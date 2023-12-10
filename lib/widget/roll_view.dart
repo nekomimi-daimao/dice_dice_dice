@@ -10,38 +10,63 @@ class RollView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Card(
+      child: Container(
         width: ConstWidgets.rollViewWidth,
-        constraints:
-            const BoxConstraints(minHeight: ConstWidgets.rollViewHeight),
-        padding: const EdgeInsets.all(5.0),
-        decoration: BoxDecoration(
-          border:
-              Border.all(color: Colors.green, width: ConstWidgets.borderWidth),
-          borderRadius: BorderRadius.circular(10),
-        ),
+        padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(roll.sum().toString()),
+            Card(
+              shape: const CircleBorder(),
+              child: Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Text(
+                  roll.sum().toString(),
+                  style: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
             Container(
               constraints: const BoxConstraints(maxHeight: 400),
               child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 child: Wrap(
-                  children: roll.result.map((e) => Text(e.toString())).toList(),
+                  children: roll.result
+                      .map(
+                        (e) => Text(
+                          "$e, ",
+                          style: const TextStyle(
+                            fontSize: 20,
+                          ),
+                        ),
+                      )
+                      .toList(),
                 ),
               ),
+            ),
+            const SizedBox(
+              height: 4,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                DiceView(dice: roll.dice),
+                Text(
+                  roll.count.toString(),
+                  style: const TextStyle(
+                    fontSize: 20,
+                  ),
+                ),
                 const Icon(Icons.close),
-                Text(roll.count.toString()),
+                DiceView(dice: roll.dice),
               ],
             ),
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
