@@ -52,6 +52,9 @@ class RollResultState extends ConsumerState<RollResult>
       if (!ref.read(currentAppSettingsProvider).playAnimation) {
         return;
       }
+      if (controller.isAnimating) {
+        return;
+      }
       controller.reset();
       controller.forward();
     });
