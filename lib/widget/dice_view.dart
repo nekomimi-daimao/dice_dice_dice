@@ -9,27 +9,48 @@ class DiceView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Card(
+      child: Container(
         width: ConstWidgets.diceViewWidth,
         height: ConstWidgets.diceViewHeight,
         padding: const EdgeInsets.all(5.0),
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.green),
-          borderRadius: BorderRadius.circular(10),
-        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(dice.name),
+            Text(
+              dice.name,
+              style: const TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const SizedBox(
+              width: 0,
+              height: 4,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(dice.min.toString()),
+                Text(
+                  dice.min.toString(),
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 const Icon(Icons.switch_left),
-                Text(dice.max.toString()),
+                Text(
+                  dice.max.toString(),
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ],
             )
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
