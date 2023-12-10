@@ -15,7 +15,8 @@ class RootView extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        surfaceTintColor: Colors.transparent,
+        backgroundColor: Colors.transparent,
         title: const Text("d3"),
       ),
       body: const Center(
@@ -23,7 +24,13 @@ class RootView extends HookConsumerWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             RollResult(),
+            SizedBox(
+              width: 20,
+            ),
             DiceSelector(),
+            SizedBox(
+              width: 20,
+            ),
             GridCount(),
           ],
         ),

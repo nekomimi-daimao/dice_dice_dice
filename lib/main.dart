@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Dice Dice Dice',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyan),
+        colorSchemeSeed: Colors.purple,
         useMaterial3: true,
       ),
       home: const RootView(),
