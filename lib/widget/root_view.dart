@@ -21,25 +21,36 @@ class RootView extends HookConsumerWidget {
         ),
       ),
       backgroundColor: Theme.of(context).colorScheme.background,
-      body: const Center(
+      body: Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            RollResult(),
-            SizedBox(
-              width: 20,
+            const RollResult(),
+            Icon(
+              Icons.drag_handle,
+              size: 60,
+              color: Theme.of(context).colorScheme.onBackground,
             ),
             Card(
-              child: Padding(
-                padding: EdgeInsets.all(10),
-                child: DiceSelector(),
+              color: Theme.of(context).colorScheme.secondaryContainer,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  const DiceSelector(),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  Icon(
+                    Icons.close,
+                    size: 40,
+                    color: Theme.of(context).colorScheme.onSecondaryContainer,
+                  ),
+                  const GridCount(),
+                ],
               ),
-            ),
-            SizedBox(
-              width: 20,
-            ),
-            Card(
-              child: GridCount(),
             ),
           ],
         ),

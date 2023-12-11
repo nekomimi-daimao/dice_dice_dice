@@ -44,7 +44,7 @@ class RollView extends HookConsumerWidget {
               ),
             ),
             Container(
-              constraints: const BoxConstraints(maxHeight: 400),
+              constraints: const BoxConstraints(maxHeight: 70),
               child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 child: Wrap(

@@ -14,7 +14,7 @@ class GridCount extends ConsumerWidget {
         width: 300,
         height: 300,
         child: GridView.builder(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(10),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
             mainAxisSpacing: 5,

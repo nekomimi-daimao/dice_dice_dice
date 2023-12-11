@@ -28,12 +28,12 @@ class MyApp extends HookConsumerWidget {
     return MaterialApp(
       title: 'Dice Dice Dice',
       theme: ThemeData(
-        colorSchemeSeed: Colors.purple,
+        colorSchemeSeed: Colors.cyan,
         brightness: Brightness.light,
         useMaterial3: true,
       ),
       darkTheme: ThemeData(
-        colorSchemeSeed: Colors.purple,
+        colorSchemeSeed: Colors.cyan,
         brightness: Brightness.dark,
         useMaterial3: true,
       ),
