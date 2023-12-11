@@ -11,6 +11,7 @@ class RollView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Theme.of(context).colorScheme.primary,
       child: Container(
         width: ConstWidgets.rollViewWidth,
         padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
@@ -19,13 +20,15 @@ class RollView extends StatelessWidget {
           children: [
             Card(
               shape: const CircleBorder(),
+              color: Theme.of(context).colorScheme.primaryContainer,
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Text(
                   roll.sum().toString(),
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.onPrimaryContainer,
                   ),
                 ),
               ),
@@ -39,8 +42,9 @@ class RollView extends StatelessWidget {
                       .map(
                         (e) => Text(
                           "$e, ",
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 20,
+                            color: Theme.of(context).colorScheme.onPrimary,
                           ),
                         ),
                       )
@@ -56,11 +60,15 @@ class RollView extends StatelessWidget {
               children: [
                 Text(
                   roll.count.toString(),
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 20,
+                    color: Theme.of(context).colorScheme.onPrimary,
                   ),
                 ),
-                const Icon(Icons.close),
+                Icon(
+                  Icons.close,
+                  color: Theme.of(context).colorScheme.onPrimary,
+                ),
                 DiceView(dice: roll.dice),
               ],
             ),

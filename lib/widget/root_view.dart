@@ -1,6 +1,4 @@
-import 'package:dice_dice_dice/provider/roll_dice.dart';
 import 'package:dice_dice_dice/widget/roll_result.dart';
-import 'package:dice_dice_dice/widget/roll_view.dart';
 import 'package:dice_dice_dice/widget/settings_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
@@ -17,8 +15,12 @@ class RootView extends HookConsumerWidget {
       appBar: AppBar(
         surfaceTintColor: Colors.transparent,
         backgroundColor: Colors.transparent,
-        title: const Text("d3"),
+        title: Text(
+          "d3",
+          style: TextStyle(color: Theme.of(context).colorScheme.onBackground),
+        ),
       ),
+      backgroundColor: Theme.of(context).colorScheme.background,
       body: const Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

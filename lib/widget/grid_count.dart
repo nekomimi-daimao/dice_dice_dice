@@ -24,11 +24,12 @@ class GridCount extends ConsumerWidget {
           itemBuilder: (context, index) {
             return ElevatedButton(
               style: ElevatedButton.styleFrom(
-                elevation: 2,
-                shape: const CircleBorder(
+                backgroundColor:
+                    Theme.of(context).colorScheme.tertiaryContainer,
+                shape: CircleBorder(
                   side: BorderSide(
                     width: ConstWidgets.borderWidth,
-                    style: BorderStyle.none,
+                    color: Theme.of(context).colorScheme.onTertiaryContainer,
                   ),
                 ),
               ),
@@ -39,10 +40,10 @@ class GridCount extends ConsumerWidget {
               },
               child: Text(
                 (index + 1).toString(),
-                style: const TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.onTertiaryContainer),
               ),
             );
           },

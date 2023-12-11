@@ -10,6 +10,7 @@ class DiceView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Theme.of(context).colorScheme.secondaryContainer,
       child: Container(
         width: ConstWidgets.diceViewWidth,
         height: ConstWidgets.diceViewHeight,
@@ -19,8 +20,9 @@ class DiceView extends StatelessWidget {
           children: [
             Text(
               dice.name,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 20,
+                color: Theme.of(context).colorScheme.onSecondaryContainer,
               ),
             ),
             const SizedBox(
@@ -32,15 +34,20 @@ class DiceView extends StatelessWidget {
               children: [
                 Text(
                   dice.min.toString(),
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 16,
+                    color: Theme.of(context).colorScheme.onSecondaryContainer,
                   ),
                 ),
-                const Icon(Icons.switch_left),
+                Icon(
+                  Icons.switch_left,
+                  color: Theme.of(context).colorScheme.onSecondaryContainer,
+                ),
                 Text(
                   dice.max.toString(),
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: 16,
+                    color: Theme.of(context).colorScheme.onSecondaryContainer,
                   ),
                 ),
               ],
