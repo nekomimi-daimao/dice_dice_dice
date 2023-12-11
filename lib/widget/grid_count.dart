@@ -1,6 +1,5 @@
 import 'package:dice_dice_dice/provider/roll_dice.dart';
 import 'package:dice_dice_dice/provider/selected_dice.dart';
-import 'package:dice_dice_dice/widget/const_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -22,23 +21,25 @@ class GridCount extends ConsumerWidget {
             childAspectRatio: 1,
           ),
           itemBuilder: (context, index) {
-            return ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor:
-                    Theme.of(context).colorScheme.tertiaryContainer,
-                shape: const CircleBorder(),
-              ),
-              onPressed: () {
-                ref
-                    .read(rollDiceProvider.notifier)
-                    .doRoll(ref.read(selectedDiceProvider), index + 1);
-              },
-              child: Text(
-                (index + 1).toString(),
-                style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.onTertiaryContainer),
+            return Builder(
+              builder: (BuildContext context) => ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor:
+                      Theme.of(context).colorScheme.tertiaryContainer,
+                  shape: const CircleBorder(),
+                ),
+                onPressed: () {
+                  ref
+                      .read(rollDiceProvider.notifier)
+                      .doRoll(ref.read(selectedDiceProvider), index + 1);
+                },
+                child: Text(
+                  (index + 1).toString(),
+                  style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).colorScheme.onTertiaryContainer),
+                ),
               ),
             );
           },
