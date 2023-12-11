@@ -1,15 +1,25 @@
+import 'package:dice_dice_dice/provider/current_app_settings.dart';
 import 'package:dice_dice_dice/widget/const_widgets.dart';
 import 'package:dice_dice_dice/widget/dice_view.dart';
 import 'package:flutter/material.dart';
 import 'package:dice_dice_dice/model/roll.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class RollView extends StatelessWidget {
+class RollView extends HookConsumerWidget {
   const RollView({super.key, required this.roll});
 
   final Roll roll;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    var result = roll.result;
+    var sort =
+        ref.watch(currentAppSettingsProvider.select((v) => v.sortResult));
+    if (sort) {
+      result.sort();
+      result = result.reversed.toList();
+    }
+
     return Card(
       color: Theme.of(context).colorScheme.primary,
       child: Container(
@@ -38,7 +48,7 @@ class RollView extends StatelessWidget {
               child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 child: Wrap(
-                  children: roll.result
+                  children: result
                       .map(
                         (e) => Text(
                           "$e, ",

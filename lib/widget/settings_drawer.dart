@@ -38,6 +38,14 @@ class SettingsDrawer extends HookConsumerWidget {
                     .read(currentAppSettingsProvider.notifier)
                     .update(settings.copyWith(playSound: v));
               }),
+          SwitchListTile(
+              title: const Text("Sort Result"),
+              value: settings.sortResult,
+              onChanged: (v) {
+                ref
+                    .read(currentAppSettingsProvider.notifier)
+                    .update(settings.copyWith(sortResult: v));
+              }),
           AboutListTile(
             icon: const Icon(Icons.info_outline_rounded),
             applicationName: packageInfo?.appName,
