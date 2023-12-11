@@ -26,12 +26,7 @@ class GridCount extends ConsumerWidget {
               style: ElevatedButton.styleFrom(
                 backgroundColor:
                     Theme.of(context).colorScheme.tertiaryContainer,
-                shape: CircleBorder(
-                  side: BorderSide(
-                    width: ConstWidgets.borderWidth,
-                    color: Theme.of(context).colorScheme.onTertiaryContainer,
-                  ),
-                ),
+                shape: const CircleBorder(),
               ),
               onPressed: () {
                 ref
