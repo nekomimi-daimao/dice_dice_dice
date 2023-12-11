@@ -11,9 +11,10 @@ class GridCount extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return SizedBox(
-        width: 260,
+        width: 300,
         height: 300,
         child: GridView.builder(
+          padding: const EdgeInsets.all(20),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
             mainAxisSpacing: 5,
@@ -24,8 +25,7 @@ class GridCount extends ConsumerWidget {
             return Builder(
               builder: (BuildContext context) => ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor:
-                      Theme.of(context).colorScheme.tertiaryContainer,
+                  backgroundColor: Theme.of(context).colorScheme.secondary,
                   shape: const CircleBorder(),
                 ),
                 onPressed: () {
@@ -38,7 +38,7 @@ class GridCount extends ConsumerWidget {
                   style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Theme.of(context).colorScheme.onTertiaryContainer),
+                      color: Theme.of(context).colorScheme.onSecondary),
                 ),
               ),
             );

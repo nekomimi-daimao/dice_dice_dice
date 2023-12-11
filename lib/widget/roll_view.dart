@@ -21,7 +21,7 @@ class RollView extends HookConsumerWidget {
     }
 
     return Card(
-      color: Theme.of(context).colorScheme.primary,
+      color: Theme.of(context).colorScheme.primaryContainer,
       child: Container(
         width: ConstWidgets.rollViewWidth,
         padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
@@ -30,7 +30,7 @@ class RollView extends HookConsumerWidget {
           children: [
             Card(
               shape: const CircleBorder(),
-              color: Theme.of(context).colorScheme.primaryContainer,
+              color: Theme.of(context).colorScheme.primary,
               child: Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Text(
@@ -38,7 +38,7 @@ class RollView extends HookConsumerWidget {
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.onPrimaryContainer,
+                    color: Theme.of(context).colorScheme.onPrimary,
                   ),
                 ),
               ),
@@ -54,7 +54,9 @@ class RollView extends HookConsumerWidget {
                           "$e, ",
                           style: TextStyle(
                             fontSize: 20,
-                            color: Theme.of(context).colorScheme.onPrimary,
+                            color: Theme.of(context)
+                                .colorScheme
+                                .onPrimaryContainer,
                           ),
                         ),
                       )
@@ -72,12 +74,12 @@ class RollView extends HookConsumerWidget {
                   roll.count.toString(),
                   style: TextStyle(
                     fontSize: 20,
-                    color: Theme.of(context).colorScheme.onPrimary,
+                    color: Theme.of(context).colorScheme.onPrimaryContainer,
                   ),
                 ),
                 Icon(
                   Icons.close,
-                  color: Theme.of(context).colorScheme.onPrimary,
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
                 ),
                 DiceView(dice: roll.dice),
               ],

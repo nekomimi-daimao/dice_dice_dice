@@ -29,11 +29,18 @@ class RootView extends HookConsumerWidget {
             SizedBox(
               width: 20,
             ),
-            DiceSelector(),
+            Card(
+              child: Padding(
+                padding: EdgeInsets.all(10),
+                child: DiceSelector(),
+              ),
+            ),
             SizedBox(
               width: 20,
             ),
-            GridCount(),
+            Card(
+              child: GridCount(),
+            ),
           ],
         ),
       ),
