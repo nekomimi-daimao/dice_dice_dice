@@ -7,7 +7,7 @@ part of 'current_app_settings.dart';
 // **************************************************************************
 
 String _$currentAppSettingsHash() =>
-    r'73996f7e34b843919e7852e6bd0a33f5f759eb3c';
+    r'b01d9c70f0cf74de80d4e3565358cb4230b529f9';
 
 /// See also [CurrentAppSettings].
 @ProviderFor(CurrentAppSettings)
