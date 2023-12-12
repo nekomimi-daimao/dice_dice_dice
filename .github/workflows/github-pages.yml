@@ -22,7 +22,9 @@ jobs:
       - name: Repository
         id: version
         run: |
+          echo "${GITHUB_REPOSITORY#${GITHUB_REPOSITORY_OWNER}/}"
           REPOSITORY=$(echo ${{ github.repository }} | sed -e "s#.*/##")
+          echo $REPOSITORY
           echo "repository"=$REPOSITORY >> $GITHUB_OUTPUT
 
       - name: Flutter Action
