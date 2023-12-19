@@ -2,6 +2,7 @@ import 'package:dice_dice_dice/model/app_settings.dart';
 import 'package:dice_dice_dice/provider/current_app_settings.dart';
 import 'package:dice_dice_dice/provider/package_info.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class SettingsDrawer extends HookConsumerWidget {
@@ -13,6 +14,8 @@ class SettingsDrawer extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final packageInfo = ref.read(packageInfoProvider).value;
     final settings = ref.watch(currentAppSettingsProvider);
+    // https://stackoverflow.com/a/76564116
+    const String releasePath = kDebugMode ? '' : 'assets/';
 
     return Drawer(
       child: ListView(
@@ -77,8 +80,8 @@ class SettingsDrawer extends HookConsumerWidget {
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 40),
-                  child: Image.asset(
-                    "images/qr.png",
+                  child: Image.network(
+                    '${releasePath}assets/images/qr.png',
                     fit: BoxFit.fill,
                   ),
                 ),
