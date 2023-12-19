@@ -13,7 +13,7 @@ class CurrentAppSettings extends _$CurrentAppSettings {
     return AppSettings(
         playAnimation: prefs.getBool(AppSettings.keyPlayAnimation) ?? true,
         playSound: prefs.getBool(AppSettings.keyPlaySound) ?? true,
-        sortResult: prefs.getBool(AppSettings.keySortResult) ?? false,
+        sortResult: prefs.getBool(AppSettings.keySortResult) ?? true,
         themeMode: ThemeMode.values.byName(
             prefs.getString(AppSettings.keyThemeMode) ??
                 ThemeMode.system.name));
