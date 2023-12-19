@@ -62,6 +62,34 @@ class SettingsDrawer extends HookConsumerWidget {
               ],
             ),
           ),
+          const Divider(
+            height: 20,
+            thickness: 4,
+          ),
+          ListTile(
+            title: const Text("Share",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    // fontWeight: FontWeight.bold,
+                    )),
+            subtitle: Column(
+              children: [
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 40),
+                  child: Image.asset(
+                    "images/qr.png",
+                    fit: BoxFit.fill,
+                  ),
+                ),
+                const Text(
+                  "https://nekomimi-daimao.github.io/dice_dice_dice/",
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+            // subtitle: Icon(Icons.info_outline_rounded),
+          ),
           AboutListTile(
             icon: const Icon(Icons.info_outline_rounded),
             applicationName: packageInfo?.appName,
