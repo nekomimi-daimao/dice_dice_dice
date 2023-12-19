@@ -1,4 +1,6 @@
 class ConstWidgets {
+  static const double verticalWidth = 800;
+
   static const double borderWidth = 2;
 
   static const double diceViewWidth = 80;
