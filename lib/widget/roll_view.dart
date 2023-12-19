@@ -4,6 +4,7 @@ import 'package:dice_dice_dice/widget/dice_view.dart';
 import 'package:flutter/material.dart';
 import 'package:dice_dice_dice/model/roll.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RollView extends HookConsumerWidget {
   const RollView({super.key, required this.roll});
@@ -36,7 +37,7 @@ class RollView extends HookConsumerWidget {
                 child: Text(
                   roll.sum().toString(),
                   style: TextStyle(
-                    fontSize: 24,
+                    fontSize: 24.sp,
                     fontWeight: FontWeight.bold,
                     color: Theme.of(context).colorScheme.onPrimary,
                   ),
@@ -53,7 +54,7 @@ class RollView extends HookConsumerWidget {
                         (e) => Text(
                           "$e, ",
                           style: TextStyle(
-                            fontSize: 20,
+                            fontSize: 20.sp,
                             color: Theme.of(context)
                                 .colorScheme
                                 .onPrimaryContainer,
@@ -64,8 +65,8 @@ class RollView extends HookConsumerWidget {
                 ),
               ),
             ),
-            const SizedBox(
-              height: 4,
+            SizedBox(
+              height: 4.h,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -73,7 +74,7 @@ class RollView extends HookConsumerWidget {
                 Text(
                   roll.count.toString(),
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 20.sp,
                     color: Theme.of(context).colorScheme.onPrimaryContainer,
                   ),
                 ),

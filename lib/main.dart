@@ -2,6 +2,7 @@ import 'package:dice_dice_dice/provider/current_app_settings.dart';
 import 'package:dice_dice_dice/provider/shared_preference.dart';
 import 'package:dice_dice_dice/widget/root_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -13,7 +14,11 @@ Future<void> main() async {
         await SharedPreferences.getInstance(),
       ),
     ],
-    child: const MyApp(),
+    child: const ScreenUtilInit(
+      minTextAdapt: true,
+      designSize: Size(600, 600),
+      child: MyApp(),
+    ),
   ));
 }
 
