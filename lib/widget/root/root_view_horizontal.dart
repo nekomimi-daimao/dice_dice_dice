@@ -3,7 +3,6 @@ import 'package:dice_dice_dice/widget/grid_count.dart';
 import 'package:dice_dice_dice/widget/roll_result.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RootViewHorizontal extends HookConsumerWidget {
   const RootViewHorizontal({super.key});
@@ -16,7 +15,7 @@ class RootViewHorizontal extends HookConsumerWidget {
         const RollResult(),
         Icon(
           Icons.drag_handle,
-          size: 60.h,
+          size: 60,
           color: Theme.of(context).colorScheme.onBackground,
         ),
         Card(
@@ -24,16 +23,16 @@ class RootViewHorizontal extends HookConsumerWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              SizedBox(
-                width: 10.w,
+              const SizedBox(
+                width: 10,
               ),
               const DiceSelector(),
-              SizedBox(
-                width: 10.w,
+              const SizedBox(
+                width: 10,
               ),
               Icon(
                 Icons.close,
-                size: 40.w,
+                size: 40,
                 color: Theme.of(context).colorScheme.onSecondaryContainer,
               ),
               const GridCount(),

@@ -1,7 +1,6 @@
 import 'package:dice_dice_dice/widget/const_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:dice_dice_dice/model/dice.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DiceView extends StatelessWidget {
   const DiceView({super.key, required this.dice});
@@ -22,13 +21,13 @@ class DiceView extends StatelessWidget {
             Text(
               dice.name,
               style: TextStyle(
-                fontSize: 20.sp,
+                fontSize: 20,
                 color: Theme.of(context).colorScheme.onTertiaryContainer,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 0,
-              height: 4.h,
+              height: 4,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -36,7 +35,7 @@ class DiceView extends StatelessWidget {
                 Text(
                   dice.min.toString(),
                   style: TextStyle(
-                    fontSize: 16.sp,
+                    fontSize: 16,
                     color: Theme.of(context).colorScheme.onTertiaryContainer,
                   ),
                 ),
@@ -47,7 +46,7 @@ class DiceView extends StatelessWidget {
                 Text(
                   dice.max.toString(),
                   style: TextStyle(
-                    fontSize: 16.sp,
+                    fontSize: 16,
                     color: Theme.of(context).colorScheme.onTertiaryContainer,
                   ),
                 ),

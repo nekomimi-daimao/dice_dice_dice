@@ -3,7 +3,6 @@ import 'package:dice_dice_dice/provider/current_app_settings.dart';
 import 'package:dice_dice_dice/provider/package_info.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SettingsDrawer extends HookConsumerWidget {
   const SettingsDrawer({
@@ -77,7 +76,7 @@ class SettingsDrawer extends HookConsumerWidget {
               children: [
                 Padding(
                   padding:
-                      EdgeInsets.symmetric(vertical: 10.w, horizontal: 40.h),
+                      const EdgeInsets.symmetric(vertical: 10, horizontal: 40),
                   child: Image.asset(
                     "images/qr.png",
                     fit: BoxFit.fill,
