@@ -1,5 +1,6 @@
 import 'package:dice_dice_dice/provider/roll_dice.dart';
 import 'package:dice_dice_dice/provider/selected_dice.dart';
+import 'package:dice_dice_dice/widget/const_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -11,14 +12,14 @@ class GridCount extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return SizedBox(
-        width: 300,
-        height: 300,
+        width: ConstWidgets.gridCountWidth,
+        height: ConstWidgets.gridCountWidth,
         child: GridView.builder(
           padding: const EdgeInsets.all(10),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
-            mainAxisSpacing: 5,
-            crossAxisSpacing: 5,
+            mainAxisSpacing: 8,
+            crossAxisSpacing: 8,
             childAspectRatio: 1,
           ),
           itemBuilder: (context, index) {
@@ -26,7 +27,10 @@ class GridCount extends ConsumerWidget {
               builder: (BuildContext context) => ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Theme.of(context).colorScheme.secondary,
-                  shape: const CircleBorder(),
+                  shape: BeveledRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  padding: EdgeInsets.zero,
                 ),
                 onPressed: () {
                   ref

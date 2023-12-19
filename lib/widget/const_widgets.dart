@@ -8,4 +8,7 @@ class ConstWidgets {
 
   static const double rollViewWidth = 200;
   static const double rollViewHeight = 200;
+
+  static const double gridCountWidth = 200;
+  static const double gridCountHeight = 200;
 }

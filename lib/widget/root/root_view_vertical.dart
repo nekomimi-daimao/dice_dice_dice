@@ -15,23 +15,18 @@ class RootViewVertical extends HookConsumerWidget {
         const RollResult(),
         Card(
           color: Theme.of(context).colorScheme.secondaryContainer,
-          child: Row(
+          child: const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              const SizedBox(
+              SizedBox(
                 width: 10,
               ),
-              const DiceSelector(),
-              const SizedBox(
+              DiceSelector(),
+              SizedBox(
                 width: 10,
               ),
-              Icon(
-                Icons.close,
-                size: 40,
-                color: Theme.of(context).colorScheme.onSecondaryContainer,
-              ),
-              const GridCount(),
+              GridCount(),
             ],
           ),
         ),
