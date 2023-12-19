@@ -9,34 +9,33 @@ class RootViewVertical extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const RollResult(),
-          Card(
-            color: Theme.of(context).colorScheme.secondaryContainer,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const SizedBox(
-                  width: 10,
-                ),
-                const DiceSelector(),
-                const SizedBox(
-                  width: 10,
-                ),
-                Icon(
-                  Icons.close,
-                  size: 40,
-                  color: Theme.of(context).colorScheme.onSecondaryContainer,
-                ),
-                const GridCount(),
-              ],
-            ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        const RollResult(),
+        Card(
+          color: Theme.of(context).colorScheme.secondaryContainer,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const SizedBox(
+                width: 10,
+              ),
+              const DiceSelector(),
+              const SizedBox(
+                width: 10,
+              ),
+              Icon(
+                Icons.close,
+                size: 40,
+                color: Theme.of(context).colorScheme.onSecondaryContainer,
+              ),
+              const GridCount(),
+            ],
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
