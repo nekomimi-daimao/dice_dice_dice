@@ -3,6 +3,7 @@ import 'package:dice_dice_dice/provider/current_app_settings.dart';
 import 'package:dice_dice_dice/provider/package_info.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class SettingsDrawer extends HookConsumerWidget {
@@ -63,6 +64,24 @@ class SettingsDrawer extends HookConsumerWidget {
                 _selectThemeButton(
                     ThemeMode.dark, settings.themeMode, settings, ref),
               ],
+            ),
+          ),
+          ListTile(
+            title: IconButton(
+              icon: const Icon(Icons.screen_rotation),
+              onPressed: () {
+                var orientation =
+                    MediaQuery.of(context).orientation == Orientation.portrait
+                        ? [
+                            DeviceOrientation.landscapeLeft,
+                            DeviceOrientation.landscapeRight
+                          ]
+                        : [
+                            DeviceOrientation.portraitUp,
+                            DeviceOrientation.portraitDown
+                          ];
+                SystemChrome.setPreferredOrientations(orientation);
+              },
             ),
           ),
           const Divider(
