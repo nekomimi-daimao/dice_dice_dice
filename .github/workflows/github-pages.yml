@@ -38,7 +38,7 @@ jobs:
         run: flutter pub get
 
       - name: Flutter build
-        run: flutter build web --base-href /${{ steps.version.outputs.repository }}/
+        run: flutter build web --base-href /${{ steps.version.outputs.repository }}/ --release
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
