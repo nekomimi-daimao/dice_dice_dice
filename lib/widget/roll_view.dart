@@ -32,8 +32,11 @@ class RollView extends HookConsumerWidget {
               Card(
                 shape: const CircleBorder(),
                 color: Theme.of(context).colorScheme.primary,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
+                child: Container(
+                  padding: const EdgeInsets.all(0),
+                  width: ConstWidgets.rollResultWidth,
+                  height: ConstWidgets.rollResultHeight,
+                  alignment: Alignment.center,
                   child: Text(
                     roll.sum().toString(),
                     style: TextStyle(
