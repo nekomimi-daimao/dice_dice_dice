@@ -15,8 +15,6 @@ class SettingsDrawer extends HookConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final packageInfo = ref.read(packageInfoProvider).value;
     final settings = ref.watch(currentAppSettingsProvider);
-    // https://stackoverflow.com/a/76564116
-    const String releasePath = kDebugMode ? '' : 'assets/';
 
     return Drawer(
       child: ListView(
@@ -99,8 +97,8 @@ class SettingsDrawer extends HookConsumerWidget {
                 Padding(
                   padding:
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 40),
-                  child: Image.network(
-                    '${releasePath}assets/images/qr.png',
+                  child: Image.asset(
+                    'assets/images/qr.png',
                     fit: BoxFit.fill,
                   ),
                 ),
